@@ -236,7 +236,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
    ];
     
     systemd.services.watchexec-task = {
-    description = "Watchexec Service";
+    description = "Watchexec Service for nixos-config";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
 
@@ -248,6 +248,28 @@ services.xserver.videoDrivers = [ "nvidia" ];
       RestartSec = "30s";
       Retart = "on-failure";
       WorkingDirectory = "/home/bob/nixos-config";
+      Environment = [
+      "HOME=/home/bob"
+      "USER=bob"
+      "PATH=${pkgs.git}/bin:${pkgs.bash}/bin:$PATH"
+      ];
+    };
+  };
+
+
+    systemd.services.watchexec-task = {
+    description = "Watchexec Service for scripts";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/Documents/scripts/ 'bash /home/bob/Documents/scripts/uploadchangestogit.sh'";
+      Restart = "always";
+      User = "bob";
+      RestartSec = "30s";
+      Retart = "on-failure";
+      WorkingDirectory = "/home/bob/Documents/scripts";
       Environment = [
       "HOME=/home/bob"
       "USER=bob"
