@@ -280,7 +280,8 @@ systemd.services = {
 
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/Documents/scripts/ 'bash /home/bob/Documents/scripts/uploadchangesofscriptstogit.sh'";
+      # ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/Documents/scripts/ 'bash /home/bob/Documents/scripts/uploadchangesofscriptstogit.sh'";
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.inotify-tools}/bin/inotifywait -m -r -e modify,create,delete /home/bob/Documents/scripts | while read path action file; do bash /home/bob/Documents/scripts/uploadchangesofscriptstogit.sh; done'";
       User = "bob";
       RestartSec = "30s";
       Retart = "on-failure";
