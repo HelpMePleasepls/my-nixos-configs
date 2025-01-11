@@ -182,6 +182,8 @@ services.xserver.videoDrivers = [ "nvidia" ];
       libGLU
       watchexec
       asciiquarium
+      lrzip
+      libreoffice-qt6-fresh
      ];
    };
 
@@ -244,10 +246,9 @@ systemd.services = {
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/nixos-config/configuration.nix 'bash /home/bob/Documents/scripts/uploadchangestogit.sh'";
-      Restart = "always";
       User = "bob";
       RestartSec = "30s";
-      Retart = "on-failure";
+      Restart = "on-failure";
       WorkingDirectory = "/home/bob/nixos-config";
       Environment = [
       "HOME=/home/bob"
@@ -266,7 +267,6 @@ systemd.services = {
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/Documents/scripts/ 'bash /home/bob/Documents/scripts/uploadchangesofscriptstogit.sh'";
-      Restart = "always";
       User = "bob";
       RestartSec = "30s";
       Retart = "on-failure";
