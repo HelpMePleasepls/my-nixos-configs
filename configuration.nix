@@ -184,6 +184,8 @@ services.xserver.videoDrivers = [ "nvidia" ];
       asciiquarium
       lrzip
       libreoffice-qt6-fresh
+      onlyoffice-desktopeditors
+      wireguard-tools
      ];
    };
 
