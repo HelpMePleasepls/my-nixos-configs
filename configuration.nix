@@ -190,6 +190,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
       libreoffice-qt6-fresh
       onlyoffice-desktopeditors
       wireguard-tools
+      kdePackages.plasma-browser-integration
      ];
    };
 
