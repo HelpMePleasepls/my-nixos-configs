@@ -265,7 +265,7 @@ systemd.services = {
 
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/Documents/scripts/ 'bash /home/bob/Documents/scripts/uploadchangestogit.sh'";
+      ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/Documents/scripts/ 'bash /home/bob/Documents/scripts/uploadchangesofscriptstogit.sh'";
       Restart = "always";
       User = "bob";
       RestartSec = "30s";
