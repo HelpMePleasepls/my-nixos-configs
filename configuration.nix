@@ -260,6 +260,7 @@ systemd.services = {
       Type = "simple";
       # ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/nixos-config/configuration.nix 'bash /home/bob/Documents/scripts/uploadchangestogit.sh'";
       ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.inotify-tools}/bin/inotifywait -m -r -e modify,create,delete /home/bob/nixos-config | while read path action file; do bash /home/bob/Documents/scripts/uploadchangestogit.sh; done'";
+# test
       User = "bob";
       RestartSec = "30s";
       Restart = "on-failure";
