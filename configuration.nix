@@ -181,6 +181,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
       mesa
       libGLU
       watchexec
+      asciiquarium
      ];
    };
 
