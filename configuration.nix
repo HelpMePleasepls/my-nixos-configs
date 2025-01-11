@@ -195,7 +195,13 @@ services.xserver.videoDrivers = [ "nvidia" ];
    };
 
    programs.fish.enable = true;
-   programs.firefox.enable = true;
+   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
+   programs.firefox = {
+      enable = true;
+      preferences = {
+          "widget.use-xdg-desktop-portal.file-picker" = 1;
+        };
+    };
    programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
