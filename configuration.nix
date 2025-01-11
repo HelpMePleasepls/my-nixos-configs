@@ -165,7 +165,6 @@ services.xserver.videoDrivers = [ "nvidia" ];
       alvr
       onboard
       ungoogled-chromium
-      kitty
       zapzap
       signal-desktop
       rustdesk
