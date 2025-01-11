@@ -84,9 +84,6 @@ services.xserver.videoDrivers = [ "nvidia" ];
     extraPortals = [ pkgs.xdg-desktop-portal-gtk];
   };
 
-
-
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -119,7 +116,13 @@ services.xserver.videoDrivers = [ "nvidia" ];
    # virtualization
    programs.virt-manager.enable = true;
    users.groups.libvirtd.members = ["bob"];
-   virtualisation.libvirtd.enable = true;
+   virtualisation.libvirtd = {
+     enable = true;
+     qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+      };
+    };
    virtualisation.spiceUSBRedirection.enable = true;
 
    # optimise storage
@@ -132,6 +135,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
      extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
       tree
+      qpwgraph
       davinci-resolve
       vesktop
       steamtinkerlaunch
