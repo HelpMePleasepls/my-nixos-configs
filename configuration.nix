@@ -235,7 +235,8 @@ services.xserver.videoDrivers = [ "nvidia" ];
      ethtool
    ];
     
-    systemd.services.watchexec-task = {
+systemd.services = {
+  watchexec-nixosconfig = {
     description = "Watchexec Service for nixos-config";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
@@ -257,7 +258,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
   };
 
 
-    systemd.services.watchexec-task = {
+  watchexec-scripts = {
     description = "Watchexec Service for scripts";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
@@ -277,6 +278,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
       ];
     };
   };
+};
 
    # Enable dbus and other services
    services = {
