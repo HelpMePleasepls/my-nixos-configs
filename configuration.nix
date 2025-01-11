@@ -234,6 +234,27 @@ services.xserver.videoDrivers = [ "nvidia" ];
      fastfetch
      ethtool
    ];
+    
+    systemd.services.watchexec-task = {
+    description = "Watchexec Service";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/nixos-config/configuration.nix 'bash /home/bob/Documents/scripts/uploadchangestogit.sh'";
+      Restart = "always";
+      User = "bob";
+      RestartSec = "30s";
+      Retart = "on-failure";
+      WorkingDirectory = "/home/bob/nixos-config";
+      Environment = [
+      "HOME=/home/bob"
+      "USER=bob"
+      "PATH=${pkgs.git}/bin:${pkgs.bash}/bin:$PATH"
+      ];
+    };
+  };
 
    # Enable dbus and other services
    services = {
