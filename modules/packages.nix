@@ -71,6 +71,7 @@
     protonmail-desktop
     zapzap
     signal-desktop
+    discord-canary
     # Gaming Packages
     steamtinkerlaunch
     protonup-qt
