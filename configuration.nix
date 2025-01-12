@@ -191,6 +191,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
       onlyoffice-desktopeditors
       wireguard-tools
       kdePackages.plasma-browser-integration
+      swtpm
      ];
    };
 
