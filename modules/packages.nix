@@ -1,6 +1,4 @@
 { config, pkgs, ... }:
-
-{
   # Define package collections/sets based on categories
   let
     developmentPackages = with pkgs; [
@@ -80,5 +78,4 @@
 
     # Apply to system packages
     environment.systemPackages = systemTools;
-  };
-}
+  }
