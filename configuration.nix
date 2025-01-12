@@ -138,6 +138,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
       tree
       qpwgraph
       davinci-resolve
+      audio-sharing
       vesktop
       steamtinkerlaunch
       adwsteamgtk
