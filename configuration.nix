@@ -195,7 +195,7 @@ systemd.services = {
 
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'bash /home/bob/Documents/arRPC.sh'";
+      ExecStart = "/home/bob/Documents/arRPC.sh";
       User = "bob";
       RestartSec = "30s";
       Restart = "on-failure";
