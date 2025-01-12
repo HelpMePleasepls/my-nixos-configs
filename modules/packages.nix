@@ -95,6 +95,7 @@
     davinci-resolve
     ffmpeg
     imagemagick
+    sonic-visualiser
     libjxl
     vlc
     mpv
