@@ -24,6 +24,42 @@
       obs-studio
       gpu-screen-recorder
       gpu-screen-recorder-gtk
+      qbittorrent
+      rclone
+      ascii-image-converter
+      inotify-tools
+      inotify-info
+      asciiquarium
+      lrzip
+      xclip
+      viu
+      chafa
+      ueberzugpp
+      unzip
+      unrar
+      rar
+      zip
+      easyeffects
+      audio-sharing
+      qpwgraph
+    ];
+
+    kdePackages = with pkgs; [
+      kdePackages.kwin
+      ksnip
+      kdePackages.spectacle
+      kdePackages.knotifications
+      kdePackages.plasma-vault
+      kdePackages.discover
+      kdePackages.plasma-browser-integration
+      menulibre
+      mission-center
+    ];
+
+    securityPackages = with pkgs; [
+      bitwarden-desktop
+      tomb
+      wireguard-tools
     ];
 
     gamingPackages = with pkgs; [
@@ -36,6 +72,8 @@
       gamescope
       mangohud
       goverlay
+      alvr
+      adwsteamgtk
     ];
 
     communicationPackages = with pkgs; [
@@ -60,6 +98,12 @@
       fd
       fzf
       fastfetch
+      swtpm
+      libGLU
+      libGL
+      mesa
+      libvpx
+      libva-utils
     ];
 
     officePackages = with pkgs; [
