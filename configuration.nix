@@ -166,9 +166,10 @@ services.xserver.videoDrivers = [ "nvidia" ];
   # $ nix search wget
   # moved packages to packages.nix
       
+  # systemd services to automatically back up configs to github
 systemd.services = {
-  watchexec-nixosconfig = {
-    description = "Watchexec Service for nixos-config";
+  inotify-nixosconfig = {
+    description = "Inotify Service for nixos-config";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
 
@@ -188,26 +189,8 @@ systemd.services = {
     };
   };
 
-    arrpc-server = {
-    description = "arRPC server for vesktop plugin";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "/run/current-system/sw/bin/bash /home/bob/Documents/arRPC.sh";
-      WorkingDirectory = "/home/bob/Documents/arrpc";
-      User = "bob";
-      RestartSec = "30s";
-      Restart = "on-failure";
-    };
-    path = [ pkgs.nodejs ];
-
-  };
-
-
-  watchexec-scripts = {
-    description = "Watchexec Service for scripts";
+  inotify-scripts = {
+    description = "Inotify Service for scripts";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
 
@@ -226,7 +209,24 @@ systemd.services = {
       ];
     };
   };
-};
+
+    arrpc-server = {
+    description = "arRPC server for vesktop plugin";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "/run/current-system/sw/bin/bash /home/bob/Documents/scripts/arRPC.sh";
+      WorkingDirectory = "/home/bob/Documents/arrpc";
+      User = "bob";
+      RestartSec = "30s";
+      Restart = "on-failure";
+    };
+    path = [ pkgs.nodejs ];
+  };
+  };
+
 
    # Enable dbus and other services
    services = {
