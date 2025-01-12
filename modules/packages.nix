@@ -82,6 +82,7 @@
     goverlay
     alvr
     adwsteamgtk
+    gearlever
     onboard
     # Security Packages
     bitwarden-desktop
