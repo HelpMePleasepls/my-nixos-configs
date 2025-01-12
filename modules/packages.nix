@@ -122,6 +122,8 @@
       mediaPackages ++
       gamingPackages ++
       communicationPackages ++
+      securityPackages ++
+      kdePackages ++
       officePackages;
 
     # Apply to system packages
