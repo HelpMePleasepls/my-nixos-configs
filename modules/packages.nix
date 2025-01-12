@@ -33,6 +33,7 @@
     unrar
     rar
     zip
+    vnstat
 
     # Development Packages
     python314
