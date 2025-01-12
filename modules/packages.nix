@@ -6,6 +6,7 @@
     # System Tools
     btop
     nvtop
+    appimage-run
     git
     lazygit
     neovim
