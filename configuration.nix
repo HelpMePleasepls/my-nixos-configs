@@ -195,12 +195,14 @@ systemd.services = {
 
     serviceConfig = {
       Type = "simple";
-      ExecStart = "/home/bob/Documents/arRPC.sh";
+      ExecStart = "/run/current-system/sw/bin/bash /home/bob/Documents/arRPC.sh";
       WorkingDirectory = "/home/bob/Documents/arrpc";
       User = "bob";
       RestartSec = "30s";
       Restart = "on-failure";
     };
+    path = [ pkgs.nodejs ];
+
   };
 
 
