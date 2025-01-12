@@ -209,7 +209,7 @@ systemd.services = {
       ];
     };
   };
-    # vesktop arrpc server
+
     arrpc-server = {
     description = "arRPC server for vesktop plugin";
     wantedBy = [ "multi-user.target" ];
