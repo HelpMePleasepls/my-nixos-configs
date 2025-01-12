@@ -188,15 +188,14 @@ systemd.services = {
     };
   };
 
-    arRPC-server = {
+    arrpc-server = {
     description = "arRPC server for vesktop plugin";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
 
     serviceConfig = {
       Type = "simple";
-      # ExecStart = "${pkgs.watchexec}/bin/watchexec --watch /home/bob/nixos-config/configuration.nix 'bash /home/bob/Documents/scripts/uploadchangestogit.sh'";
-      ExecStart = "'bash /home/bob/Documents/arRPC.sh'";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'bash /home/bob/Documents/arRPC.sh'";
       User = "bob";
       RestartSec = "30s";
       Restart = "on-failure";
