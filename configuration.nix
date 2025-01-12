@@ -202,7 +202,7 @@ systemd.services = {
       Environment = [
       "HOME=/home/bob"
       "USER=bob"
-      "PATH=${pkgs.git}/bin:${pkgs.bash}/bin:$PATH"
+      "PATH=${pkgs.nodejs}/bin:${pkgs.bash}/bin:$PATH"
       ];
     };
   };
