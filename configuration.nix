@@ -325,6 +325,8 @@ systemd.services = {
     allowedUDPPortRanges = [
        { from = 1714; to = 1764; } # KDE Connect
       ];
+    allowedTCPPorts = [ 8554 ];
+    allowedUDPPorts = [ 8554 ];
     };
 
   # Copy the NixOS configuration file and link it from the resulting system
