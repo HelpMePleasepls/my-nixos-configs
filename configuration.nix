@@ -173,7 +173,6 @@ services.xserver.videoDrivers = [ "nvidia" ];
       ungoogled-chromium
       zapzap
       signal-desktop
-      rustdesk
       menulibre
       qbittorrent
       tomb
