@@ -42,6 +42,7 @@
       easyeffects
       audio-sharing
       qpwgraph
+      ungoogled-chromium
     ];
 
     kdePackages = with pkgs; [
@@ -74,6 +75,7 @@
       goverlay
       alvr
       adwsteamgtk
+      onboard
     ];
 
     communicationPackages = with pkgs; [
@@ -104,6 +106,8 @@
       mesa
       libvpx
       libva-utils
+      ethtool
+      lua54Packages.luarocks
     ];
 
     officePackages = with pkgs; [
