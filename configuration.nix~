@@ -200,6 +200,11 @@ systemd.services = {
       User = "bob";
       RestartSec = "30s";
       Restart = "on-failure";
+      Environment = [
+      "HOME=/home/bob"
+      "USER=bob"
+      "PATH=${pkgs.nodejs}/bin:${pkgs.bash}/bin:$PATH"
+      ];
     };
   };
 
