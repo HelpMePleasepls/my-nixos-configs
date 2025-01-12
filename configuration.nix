@@ -196,6 +196,7 @@ systemd.services = {
     serviceConfig = {
       Type = "simple";
       ExecStart = "/home/bob/Documents/arRPC.sh";
+      WorkingDirectory = "/home/bob/Documents/arrpc";
       User = "bob";
       RestartSec = "30s";
       Restart = "on-failure";
