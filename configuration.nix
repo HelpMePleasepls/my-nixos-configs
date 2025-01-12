@@ -129,6 +129,14 @@ services.xserver.videoDrivers = [ "nvidia" ];
    # optimise storage
    nix.optimise.automatic = true;
    nix.optimise.dates = [ "18:00" ]; # Optional; allows customizing optimisation schedule
+   nix.settings.auto-optimise-store = true; # optimize nix store
+   services.fstrim.enable = true; # enable fstrim
+   nix.gc = { # auto garbage collection
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    programs.dconf.enable = true; # helps integrate GTK apps
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.bob = {
