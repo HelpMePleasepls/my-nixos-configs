@@ -35,7 +35,7 @@ boot = {
   networking = {
       networkmanager = {
           enable = true;
-          packages = [ pkgs.networkmanager-wireguard ];
+          packages = [ pkgs.networkmanager-wg ];
         };
     };
   # Set your time zone.
