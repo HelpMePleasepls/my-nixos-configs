@@ -121,6 +121,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
      qemu = {
         swtpm.enable = true;
         ovmf.enable = true;
+        package = pkgs.qemu_full;
       };
     };
    virtualisation.spiceUSBRedirection.enable = true;
