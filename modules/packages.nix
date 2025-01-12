@@ -95,6 +95,7 @@
     davinci-resolve
     ffmpeg
     imagemagick
+    libjxl
     vlc
     mpv
     obs-studio
