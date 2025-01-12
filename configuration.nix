@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/packages.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -142,67 +143,8 @@ services.xserver.videoDrivers = [ "nvidia" ];
    users.users.bob = {
      isNormalUser = true;
      extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-      tree
-      qpwgraph
-      davinci-resolve
-      audio-sharing
-      vesktop
-      steamtinkerlaunch
-      adwsteamgtk
-      rclone
-      ascii-image-converter
-      tmux
-      protonup-qt
-      protontricks
-      protonmail-bridge
-      protonmail-desktop
-      thunderbird
-      python314
-      nodejs_23
-      gpu-screen-recorder
-      gpu-screen-recorder-gtk
-      ffmpeg
-      imagemagick
-      vlc
-      mpv
-      libva-utils
-      libvpx
-      obs-studio
-      nvtop
-      easyeffects
-      bitwarden-desktop
-      thunderbird
-      mission-center
-      lutris
-      bottles
-      alvr
-      onboard
-      ungoogled-chromium
-      zapzap
-      signal-desktop
-      menulibre
-      qbittorrent
-      tomb
-      inotify-tools
-      inotify-info
-      gamemode
-      gamescope
-      mangohud
-      goverlay
-      libGL
-      mesa
-      libGLU
-      watchexec
-      asciiquarium
-      lrzip
-      libreoffice-qt6-fresh
-      onlyoffice-desktopeditors
-      wireguard-tools
-      kdePackages.plasma-browser-integration
-      swtpm
-     ];
-   };
+     # moved packages to packages.nix
+    };
 
    programs.fish.enable = true;
    nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
@@ -222,44 +164,8 @@ services.xserver.videoDrivers = [ "nvidia" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     git
-     lazygit
-     tree-sitter
-     fzf
-     ripgrep
-     fd
-     gcc
-     btop
-     xclip
-     kdePackages.discover
-     kdePackages.plasma-vault
-     kdePackages.knotifications
-     kdePackages.spectacle
-     ksnip
-     gearlever
-     kdePackages.kwin
-     viu
-     chafa
-     ueberzugpp
-     lua54Packages.luarocks
-     unzip
-     unrar
-     rar
-     zip
-     go
-     php
-     cargo
-     zulu
-     ruby
-     julia
-     python313Packages.pip
-     fastfetch
-     ethtool
-   ];
-    
+  # moved packages to packages.nix
+      
 systemd.services = {
   watchexec-nixosconfig = {
     description = "Watchexec Service for nixos-config";
