@@ -117,6 +117,7 @@
     ungoogled-chromium
     # Other packages
     kicad
+    just
     devtoolbox
   ];
 }
