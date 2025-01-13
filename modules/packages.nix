@@ -60,7 +60,6 @@
     kdePackages.plasma-browser-integration
     menulibre
     mission-center
-    (callPackage ./home/bob/Downloads/buildingee/img2wav.nix {})
 ];
 
   # If you need to specify user-specific packages, you can do it this way:
@@ -105,6 +104,7 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     gimp
+    (callPackage /home/bob/Downloads/buildingee/img2wav.nix {})
     audacity
     qbittorrent
     rclone
