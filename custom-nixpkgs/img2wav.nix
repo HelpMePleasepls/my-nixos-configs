@@ -11,7 +11,7 @@ python3Packages.buildPythonPackage rec {
     owner = "shareef12";
     repo = "img2wav";
     rev = "v${version}";
-    sha256 = "sha256-YW4MHSraIzSW2MuayEHl+4Y1GPN+xdq6G00PnsdjST8=";  # Updated hash from the error message
+    sha256 = "sha256-YW4MHSraIzSW2MuayEHl+4Y1GPN+xdq6G00PnsdjST8=";  
   };
 
   propagatedBuildInputs = with python3Packages; [
