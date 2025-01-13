@@ -53,6 +53,7 @@
     kdePackages.kwin
     ksnip
     kdePackages.spectacle
+    kdePackages.qtwebengine
     kdePackages.knotifications
     kdePackages.plasma-vault
     kdePackages.discover
