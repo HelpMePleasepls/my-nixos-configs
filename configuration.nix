@@ -217,7 +217,7 @@ systemd.services = {
 
     serviceConfig = {
       Type = "simple";
-      ExecStart = "/run/current-system/sw/bin/bash /home/bob/Documents/scripts/arRPC.sh";
+      ExecStart = "/run/current-system/sw/bin/bash /home/bob/.nix-profile/bin/arRPC.sh";
       WorkingDirectory = "/home/bob/Documents/arrpc";
       User = "bob";
       RestartSec = "30s";
