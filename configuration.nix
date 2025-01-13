@@ -63,8 +63,10 @@ services.xserver.videoDrivers = [ "nvidia" ];
   powerManagement.enable = true;
   open = false;
   nvidiaSettings = true;
-  coolbits = 12;
   package = config.boot.kernelPackages.nvidiaPackages.beta;
+  extraOptions = {
+      "Coolbits" = "12";
+    };
  };
  # Enable X11 and Wayland
   services.xserver = {
