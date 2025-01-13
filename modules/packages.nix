@@ -103,6 +103,7 @@
     obs-studio
     gpu-screen-recorder
     gpu-screen-recorder-gtk
+    gimp
     qbittorrent
     rclone
     ascii-image-converter
