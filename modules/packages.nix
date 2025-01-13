@@ -79,7 +79,6 @@
     protontricks
     lutris
     bottles
-    gamemode
     gamescope
     mangohud
     goverlay
@@ -104,6 +103,7 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     gimp
+    audacity
     qbittorrent
     rclone
     ascii-image-converter

@@ -142,7 +142,7 @@ services.xserver.videoDrivers = [ "nvidia" ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.bob = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" "video" "libvirtd" "gamemode" ]; # Enable ‘sudo’ for the user.
      # moved packages to packages.nix
     };
 
@@ -161,6 +161,17 @@ services.xserver.videoDrivers = [ "nvidia" ];
       localNetworkGameTransfers.openFirewall = true;
     };
    programs.kdeconnect.enable = true;
+
+   programs.gamemode = {
+      enable = true;
+      enableRenice = true;
+      settings = {
+      custom = {
+      start = "''${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+      end = "''${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+        };
+      };
+    };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
