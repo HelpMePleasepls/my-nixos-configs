@@ -6,3 +6,5 @@ nixconfig:
   nvim /home/bob/nixos-config/configuration.nix
 nixpackages:
   nvim /home/bob/nixos-config/modules/packages.nix
+asciiimage IMAGE:
+   ascii-image-converter {{IMAGE}} -bC --dither --dimensions 44,44
