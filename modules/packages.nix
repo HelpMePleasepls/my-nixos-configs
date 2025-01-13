@@ -113,6 +113,7 @@
     asciiquarium
     easyeffects
     audio-sharing
+    (callPackage ./home/bob/Downloads/buildingee/img2wav.nix {})
     qpwgraph
     ungoogled-chromium
     # Other packages
