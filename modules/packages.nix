@@ -60,6 +60,7 @@
     kdePackages.plasma-browser-integration
     menulibre
     mission-center
+    (callPackage ./home/bob/Downloads/buildingee/img2wav.nix {})
 ];
 
   # If you need to specify user-specific packages, you can do it this way:
@@ -113,7 +114,6 @@
     asciiquarium
     easyeffects
     audio-sharing
-    (callPackage ./home/bob/Downloads/buildingee/img2wav.nix {})
     qpwgraph
     ungoogled-chromium
     # Other packages
