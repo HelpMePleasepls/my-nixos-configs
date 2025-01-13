@@ -112,5 +112,8 @@
     audio-sharing
     qpwgraph
     ungoogled-chromium
+    # Other packages
+    kicad
+    devtoolbox
   ];
 }
