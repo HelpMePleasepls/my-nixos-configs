@@ -58,15 +58,15 @@ boot = {
 
   # NVIDIA driver
 services.xserver.videoDrivers = [ "nvidia" ];
+services.xserver.deviceSection = ''
+Option "Coolbits" "28"
+'';
  hardware.nvidia = {
   modesetting.enable = true;
   powerManagement.enable = true;
   open = false;
   nvidiaSettings = true;
   package = config.boot.kernelPackages.nvidiaPackages.beta;
-  extraOptions = {
-      "Coolbits" = "12";
-    };
  };
  # Enable X11 and Wayland
   services.xserver = {
