@@ -52,6 +52,7 @@
 
     # KDE Packages
     kdePackages.kwin
+    kdePackages.kdeconnect-kde
     ksnip
     kdePackages.spectacle
     kdePackages.qtwebengine
