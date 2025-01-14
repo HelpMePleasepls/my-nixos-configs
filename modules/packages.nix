@@ -51,16 +51,10 @@
     tree-sitter
 
     # KDE Packages
-    kdePackages.kwin
-    kdePackages.kdeconnect-kde
     ksnip
     kdePackages.spectacle
     kdePackages.qtwebengine
-    kdePackages.knotifications
     kdePackages.plasma-vault
-    kdePackages.discover
-    kdePackages.plasma-browser-integration
-    kdePackages.plasma-workspace
     kdePackages.sshfs
     menulibre
     mission-center
