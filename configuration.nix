@@ -176,12 +176,10 @@ Option "Coolbits" "28"
     workstation = true;
   };
 };
-    programs.kdeconnect = {
-      enable = true;
-      package = pkgs.kdePackages.kdeconnect-kde;
-};
 
-   programs.gamemode = {
+    programs.kdeconnect.enable = true;
+
+    programs.gamemode = {
       enable = true;
       enableRenice = true;
       settings = {
