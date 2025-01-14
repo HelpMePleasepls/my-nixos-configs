@@ -163,7 +163,23 @@ Option "Coolbits" "28"
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
     };
-   programs.kdeconnect.enable = true;
+   # this is all for kde Connect
+   services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    publish = {
+    enable = true;
+    addresses = true;
+    domain = true;
+    hinfo = true;
+    userServices = true;
+    workstation = true;
+  };
+};
+    programs.kdeconnect = {
+      enable = true;
+      package = pkgs.kdePackages.kdeconnect-kde;
+};
 
    programs.gamemode = {
       enable = true;
