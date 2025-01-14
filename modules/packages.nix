@@ -35,6 +35,7 @@
     rar
     zip
     vnstat
+    nix-search-cli
 
     # Development Packages
     python314
