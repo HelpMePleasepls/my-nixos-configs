@@ -164,7 +164,6 @@ Option "Coolbits" "28"
       localNetworkGameTransfers.openFirewall = true;
     };
    programs.kdeconnect.enable = true;
-   services.kdeconnect.enable = true;
 
    programs.gamemode = {
       enable = true;
