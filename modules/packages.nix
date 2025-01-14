@@ -49,13 +49,13 @@
     julia
     python313Packages.pip
     tree-sitter
+    sshfs
 
     # KDE Packages
     ksnip
     kdePackages.spectacle
     kdePackages.qtwebengine
     kdePackages.plasma-vault
-    kdePackages.sshfs
     menulibre
     mission-center
 ];
