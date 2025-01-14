@@ -60,6 +60,8 @@
     kdePackages.plasma-vault
     kdePackages.discover
     kdePackages.plasma-browser-integration
+    kdePackages.plasma-workspace
+    kdePackages.sshfs
     menulibre
     mission-center
 ];
