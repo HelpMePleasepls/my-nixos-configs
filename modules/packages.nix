@@ -118,6 +118,7 @@
     ungoogled-chromium
     # Other packages
     kicad
+    qalculate-qt
     just
     devtoolbox
   ];
