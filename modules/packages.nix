@@ -79,7 +79,6 @@
     bottles
     gamescope
     mangohud
-    goverlay
     alvr
     adwsteamgtk
     onboard
