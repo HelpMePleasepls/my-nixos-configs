@@ -59,7 +59,7 @@ boot = {
   # NVIDIA driver
 services.xserver.videoDrivers = [ "nvidia" ];
 services.xserver.deviceSection = ''
-Option "Coolbits" "28"
+Option "Coolbits" "8"
 '';
  hardware.nvidia = {
   modesetting.enable = true;
