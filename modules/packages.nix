@@ -118,6 +118,7 @@
     kicad
     qalculate-qt
     just
+    gwe
     devtoolbox
   ];
 }
