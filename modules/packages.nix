@@ -80,6 +80,7 @@
     gamescope
     mangohud
     alvr
+    mangojuice
     adwsteamgtk
     onboard
     # Security Packages
