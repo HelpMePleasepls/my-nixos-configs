@@ -54,6 +54,7 @@
     # KDE Packages
     ksnip
     kdePackages.spectacle
+    kdePackages.kruler
     kdePackages.qtwebengine
     kdePackages.plasma-vault
     menulibre
