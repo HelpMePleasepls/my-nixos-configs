@@ -93,7 +93,7 @@
     onlyoffice-desktopeditors
     # Media Packages
     davinci-resolve
-    revolt
+    revolt-desktop
     drawio
     upscayl
     losslesscut-bin
