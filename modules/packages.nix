@@ -93,6 +93,7 @@
     # Media Packages
     davinci-resolve
     drawio
+    upscayl
     losslesscut-bin
     ffmpeg
     imagemagick
