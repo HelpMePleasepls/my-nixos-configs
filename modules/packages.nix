@@ -54,6 +54,7 @@
     # KDE Packages
     ksnip
     kdePackages.spectacle
+    kdePackages.kolourpaint
     kdePackages.kruler
     kdePackages.qtwebengine
     kdePackages.plasma-vault
