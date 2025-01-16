@@ -92,6 +92,7 @@
     onlyoffice-desktopeditors
     # Media Packages
     davinci-resolve
+    drawio
     losslesscut-bin
     ffmpeg
     imagemagick
