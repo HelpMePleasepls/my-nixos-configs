@@ -68,7 +68,6 @@
     # Communication Packages
     vesktop
     protonmail-bridge
-    betterbird
     protonmail-desktop
     zapzap
     signal-desktop
