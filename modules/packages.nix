@@ -67,8 +67,8 @@
     # Add any user-specific packages here
     # Communication Packages
     vesktop
-    thunderbird
     protonmail-bridge
+    betterbird
     protonmail-desktop
     zapzap
     signal-desktop
