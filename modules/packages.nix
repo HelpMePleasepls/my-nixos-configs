@@ -39,6 +39,7 @@
 
     # Development Packages
     python314
+    gocryptfs
     nodejs_23
     gcc
     go
