@@ -76,6 +76,8 @@
     steamtinkerlaunch
     protonup-qt
     protontricks
+    wineWow64Packages.full
+    winePackages.wayland
     lutris
     bottles
     gamescope
