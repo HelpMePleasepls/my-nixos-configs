@@ -95,8 +95,8 @@
     libreoffice-qt6-fresh
     onlyoffice-desktopeditors
     # Media Packages
-    youtube-dl
     davinci-resolve
+    yt-dlp
     revolt-desktop
     drawio
     upscayl
