@@ -38,7 +38,6 @@
     nix-search-cli
 
     # Development Packages
-    youtube-dl
     python314
     gocryptfs
     nodejs_23
@@ -96,6 +95,7 @@
     libreoffice-qt6-fresh
     onlyoffice-desktopeditors
     # Media Packages
+    youtube-dl
     davinci-resolve
     revolt-desktop
     drawio
