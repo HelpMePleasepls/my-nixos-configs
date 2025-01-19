@@ -38,6 +38,7 @@
     nix-search-cli
 
     # Development Packages
+    youtube-dl
     python314
     gocryptfs
     nodejs_23
