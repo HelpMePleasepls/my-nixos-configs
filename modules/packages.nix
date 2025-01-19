@@ -74,6 +74,7 @@
     signal-desktop
     discord-canary
     # Gaming Packages
+    prismlauncher
     steamtinkerlaunch
     protonup-qt
     protontricks
