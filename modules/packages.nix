@@ -6,7 +6,6 @@
     # System Tools
     btop
     nvtop
-    linuxquota
     appimage-run
     git
     lazygit
