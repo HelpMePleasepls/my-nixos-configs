@@ -39,6 +39,7 @@
 
     # Development Packages
     python314
+    powerline-fonts
     gocryptfs
     nodejs_23
     gcc
