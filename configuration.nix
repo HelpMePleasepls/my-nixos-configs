@@ -13,7 +13,8 @@
 
   # Use the systemd-boot EFI boot loader.
 boot = {
-  tmpOnTmpfs = false; # faster build times, higher RAM usage
+  tmpOnTmpfs = true; # faster build times, higher RAM usage
+  tmpuse = "40%";
   loader = {
   systemd-boot.enable = true;
   efi.canTouchEfiVariables = true;
