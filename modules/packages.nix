@@ -128,6 +128,7 @@
     kicad
     qalculate-qt
     just
+    josm
     gwe
     devtoolbox
   ];
