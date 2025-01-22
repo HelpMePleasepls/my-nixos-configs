@@ -1,5 +1,7 @@
 rebuild:
   sudo nixos-rebuild switch
+upgrade:
+  sudo nixos-rebuild switch --upgrade
 edit:
   nvim /home/bob/justfile
 nixconfig:
