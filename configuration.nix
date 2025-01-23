@@ -35,6 +35,11 @@ system.activationScripts.spaceOptimization = "
   nixpkgs.config.allowUnfree = true;
   # enabble experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+  build-users-group = "nixbld";
+  # Adjust path based on which option you chose above
+  build-dir = "/home/bob/build";  # or "/thehardslow/build"
+};
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
