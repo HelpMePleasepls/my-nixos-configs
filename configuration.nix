@@ -31,6 +31,13 @@ system.activationScripts.spaceOptimization = "
   ${config.nix.package.out}/bin/nix-store --optimise
 ";
 
+swapDevices = [
+  {
+    device = "/swap/swapfile";
+    size = 16*1024;
+  }
+];
+
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # enabble experimental features
