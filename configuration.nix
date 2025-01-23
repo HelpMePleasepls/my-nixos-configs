@@ -44,9 +44,14 @@ swapDevices = [
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings = {
   build-users-group = "nixbld";
-  # Adjust path based on which option you chose above
-  build-dir = "/home/bob/build";  # or "/thehardslow/build"
-};
+   # Use a dedicated build directory
+   build-dir = "/home/bob/build";
+    # Add these lines:
+   min-free = 536870912; # Keep at least 512MB free
+   max-jobs = "auto";    # Automatically determine number of build jobs
+   cores = 0;           # Use all available cores
+  };
+
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
