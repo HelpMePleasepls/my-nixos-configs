@@ -14,7 +14,7 @@
   # Use the systemd-boot EFI boot loader.
 boot = {
   tmpOnTmpfs = true; # faster build times, higher RAM usage
-  tmpOnTmpfsSize = "16G";
+  tmpOnTmpfsSize = "24G";
   loader = {
   systemd-boot.enable = true;
   efi.canTouchEfiVariables = true;
@@ -25,6 +25,11 @@ boot = {
    "nvidia-drm.modeset=1"
   ];
 };
+system.activationScripts.spaceOptimization = "
+  ${pkgs.coreutils}/bin/rm -rf /tmp/*
+  ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
+  ${config.nix.package.out}/bin/nix-store --optimise
+";
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
