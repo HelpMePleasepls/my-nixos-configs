@@ -44,7 +44,7 @@ system.activationScripts = {
   '';
 };
 
-};  # allow unfree packages
+  # allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # enabble experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
