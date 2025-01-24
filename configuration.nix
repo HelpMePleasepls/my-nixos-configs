@@ -36,7 +36,6 @@ nix = {
   };
 };
 
-# Update your activation script
 system.activationScripts = {
   spaceOptimization = ''
     ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
