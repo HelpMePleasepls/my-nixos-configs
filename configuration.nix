@@ -135,15 +135,15 @@ Option "Coolbits" "12"
    # virtualization
    # programs.virt-manager.enable = true;
    users.groups.libvirtd.members = ["bob"];
-   # virtualisation.libvirtd = {
-   #  enable = true;
-   #  qemu = {
-   #     swtpm.enable = true;
-   #     ovmf.enable = true;
-   #     package = pkgs.qemu_full;
-   #   };
-   # };
-   # virtualisation.spiceUSBRedirection.enable = true;
+   virtualisation.libvirtd = {
+     enable = true;
+     qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        package = pkgs.qemu_full;
+      };
+    };
+   virtualisation.spiceUSBRedirection.enable = true;
 
    # optimise storage
    nix.optimise.automatic = true;
