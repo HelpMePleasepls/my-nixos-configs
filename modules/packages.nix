@@ -74,21 +74,7 @@
     zapzap
     signal-desktop
     discord-canary
-    # Gaming Packages
-    prismlauncher
-    steamtinkerlaunch
-    protonup-qt
-    protontricks
-    wineWow64Packages.full
-    winePackages.wayland
-    lutris
-    bottles
-    gamescope
-    mangohud
-    alvr
-    mangojuice
-    adwsteamgtk
-    onboard
+
     # Security Packages
     bitwarden-desktop
     tomb
