@@ -13,8 +13,8 @@
 
   # Use the systemd-boot EFI boot loader.
 boot = {
-  # tmp.useTmpfs = true;
-  # tmp.tmpfsSize = "24G";
+  tmp.useTmpfs = true;
+  tmp.tmpfsSize = "24G";
   loader = {
   systemd-boot.enable = true;
   efi.canTouchEfiVariables = true;
