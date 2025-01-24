@@ -147,7 +147,6 @@ Option "Coolbits" "12"
    virtualisation.spiceUSBRedirection.enable = true;
 
    # optimise storage
-   nix.optimise.automatic = true;
    nix.optimise.dates = [ "18:00" ]; # Optional; allows customizing optimisation schedule
    nix.settings.auto-optimise-store = true; # optimize nix store
    services.fstrim.enable = true; # enable fstrim
