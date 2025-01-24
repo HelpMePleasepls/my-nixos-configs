@@ -165,10 +165,10 @@ Option "Coolbits" "12"
 
     programs.fish = {
     enable = true;
-    vendor = {
-      completions.enable = true;
-      config.enable = true;
-      };
+    # vendor = {
+    #  completions.enable = true;
+    #  config.enable = true;
+    #   };
     };
    nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
    programs.firefox = {
