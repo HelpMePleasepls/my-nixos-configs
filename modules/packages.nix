@@ -64,9 +64,7 @@
     mission-center
 ];
 
-  # If you need to specify user-specific packages, you can do it this way:
   users.users.bob.packages = with pkgs; [
-    # Add any user-specific packages here
     # Communication Packages
     vesktop
     protonmail-bridge
