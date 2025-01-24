@@ -47,10 +47,6 @@ system.activationScripts = {
    sandbox = true;
    sandbox-paths = [ "/bin" "/etc" "/usr" "/tmp" ];
    use-substitutes = true;
-   createBuildDirs = ''
-      mkdir -p /tmp/nix-build
-      chmod 755 /tmp/nix-build
-   '';
   };
 
   # networking.hostName = "nixos"; # Define your hostname.
