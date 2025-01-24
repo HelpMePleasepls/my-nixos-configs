@@ -114,7 +114,7 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     gimp
-    (callPackage /home/bob/nixos-config/custom-nixpkgs/img2wav.nix {})
+    (callPackage ../custom-nixpkgs/img2wav.nix {})
     audacity
     qbittorrent
     rclone
