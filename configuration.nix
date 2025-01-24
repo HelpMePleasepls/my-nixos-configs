@@ -13,8 +13,8 @@
 
   # Use the systemd-boot EFI boot loader.
 boot = {
-  tmp.useTmpfs = true;
-  tmp.tmpfsSize = "24G";
+  # tmp.useTmpfs = true;
+  # tmp.tmpfsSize = "24G";
   loader = {
   systemd-boot.enable = true;
   efi.canTouchEfiVariables = true;
@@ -28,20 +28,20 @@ boot = {
 
 nix = {
   settings = {
-   #  sandbox = true;
-   #  sandbox-paths = [ "/bin" "/etc" "/usr" "/tmp" ];
-   #  use-substitutes = true;
-   #  auto-optimise-store = true;
+    sandbox = true;
+    sandbox-paths = [ "/bin" "/etc" "/usr" "/tmp" ];
+    use-substitutes = true;
+    auto-optimise-store = true;
     experimental-features = [ "nix-command" "flakes" ];
   };
 };
 
-# system.activationScripts = {
-#   spaceOptimization = ''
-#     ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
-#     ${config.nix.package.out}/bin/nix-store --optimise
-#   '';
-# };
+system.activationScripts = {
+  spaceOptimization = ''
+    ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
+    ${config.nix.package.out}/bin/nix-store --optimise
+  '';
+};
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -134,16 +134,16 @@ Option "Coolbits" "12"
 
    # virtualization
    # programs.virt-manager.enable = true;
-   # users.groups.libvirtd.members = ["bob"];
-   # virtualisation.libvirtd = {
-   #   enable = true;
-   #   qemu = {
-   #      swtpm.enable = true;
-   #      ovmf.enable = true;
-   #      package = pkgs.qemu_full;
-   #    };
-   #  };
-   # virtualisation.spiceUSBRedirection.enable = true;
+   users.groups.libvirtd.members = ["bob"];
+   virtualisation.libvirtd = {
+     enable = true;
+     qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        package = pkgs.qemu_full;
+      };
+    };
+   virtualisation.spiceUSBRedirection.enable = true;
 
    # optimise storage
    nix.optimise.automatic = true;
@@ -165,10 +165,10 @@ Option "Coolbits" "12"
 
     programs.fish = {
     enable = true;
-    # vendor = {
-    #  completions.enable = true;
-    #  config.enable = true;
-    #   };
+    vendor = {
+      completions.enable = true;
+      config.enable = true;
+      };
     };
    nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
    programs.firefox = {
