@@ -25,12 +25,17 @@ boot = {
    "nvidia-drm.modeset=1"
   ];
 };
-system.activationScripts.spaceOptimization = ''
-  ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
-  ${config.nix.package.out}/bin/nix-store --optimise
-'';
+system.activationScripts = {
+  spaceOptimization = ''
+    ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
+    ${config.nix.package.out}/bin/nix-store --optimise
+  '';
 
-  # allow unfree packages
+  createBuildDirs = ''
+    mkdir -p /tmp/nix-build
+    chmod 755 /tmp/nix-build
+  '';
+};  # allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # enabble experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -47,7 +52,6 @@ system.activationScripts.spaceOptimization = ''
       chmod 755 /tmp/nix-build
    '';
   };
-
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -172,6 +176,7 @@ Option "Coolbits" "12"
     vendor = {
       completions.enable = true;
       config.enable = true;
+      };
     };
    nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
    programs.firefox = {
