@@ -13,8 +13,8 @@
 
   # Use the systemd-boot EFI boot loader.
 boot = {
-  tmpOnTmpfs = true; 
-  tmpOnTmpfsSize = "24G";
+  tmp.useTmpfs = true;
+  tmp.tmpfsSize = "24G";
   loader = {
   systemd-boot.enable = true;
   efi.canTouchEfiVariables = true;
@@ -25,29 +25,29 @@ boot = {
    "nvidia-drm.modeset=1"
   ];
 };
+
+nix = {
+  settings = {
+    sandbox = true;
+    sandbox-paths = [ "/bin" "/etc" "/usr" "/tmp" ];
+    use-substitutes = true;
+    auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
+  };
+};
+
+# Update your activation script
 system.activationScripts = {
   spaceOptimization = ''
     ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
     ${config.nix.package.out}/bin/nix-store --optimise
   '';
+};
 
-  createBuildDirs = ''
-    mkdir -p /tmp/nix-build
-    chmod 755 /tmp/nix-build
-  '';
 };  # allow unfree packages
   nixpkgs.config.allowUnfree = true;
   # enabble experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings = {
-   temp-dir = "/tmp/nix-build";
-   min-free = 536870912; # Keep at least 512MB free
-   max-jobs = "auto";    # Automatically determine number of build jobs
-   cores = 0;           # Use all available cores
-   sandbox = true;
-   sandbox-paths = [ "/bin" "/etc" "/usr" "/tmp" ];
-   use-substitutes = true;
-  };
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
