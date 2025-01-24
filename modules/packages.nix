@@ -96,34 +96,7 @@
     # Office Packages
     libreoffice-qt6-fresh
     onlyoffice-desktopeditors
-    # Media Packages
-    davinci-resolve
-    yt-dlp
-    revolt-desktop
-    drawio
-    upscayl
-    losslesscut-bin
-    ffmpeg
-    imagemagick
-    libjxl
-    vlc
-    mpv
-    obs-studio
-    gpu-screen-recorder
-    gpu-screen-recorder-gtk
-    gimp
-    (callPackage /home/bob/nixos-config/custom-nixpkgs/img2wav.nix {})
-    audacity
-    qbittorrent
-    rclone
-    ascii-image-converter
-    inotify-tools
-    inotify-info
-    asciiquarium
-    easyeffects
-    audio-sharing
-    qpwgraph
-    ungoogled-chromium
+
     # Other packages
     kicad
     qalculate-qt
