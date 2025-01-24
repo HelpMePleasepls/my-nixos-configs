@@ -36,10 +36,6 @@ system.activationScripts.spaceOptimization = "
   # enabble experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings = {
-  build-users-group = "nixbld";
-   # Use a dedicated build directory
-   build-dir = "/home/bob/build";
-    # Add these lines:
    min-free = 536870912; # Keep at least 512MB free
    max-jobs = "auto";    # Automatically determine number of build jobs
    cores = 0;           # Use all available cores
