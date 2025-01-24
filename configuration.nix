@@ -8,13 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/packages.nix
+      # ./modules/packages.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
 boot = {
-  # tmpOnTmpfs = true; # faster build times, higher RAM usage
-  # tmpOnTmpfsSize = "24G";
+  tmpOnTmpfs = true; # faster build times, higher RAM usage
+  tmpOnTmpfsSize = "24G";
   loader = {
   systemd-boot.enable = true;
   efi.canTouchEfiVariables = true;
@@ -30,13 +30,6 @@ system.activationScripts.spaceOptimization = "
   ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
   ${config.nix.package.out}/bin/nix-store --optimise
 ";
-
-swapDevices = [
-  {
-    device = "/swap/swapfile";
-    size = 16*1024;
-  }
-];
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
