@@ -25,11 +25,10 @@ boot = {
    "nvidia-drm.modeset=1"
   ];
 };
-system.activationScripts.spaceOptimization = "
-  ${pkgs.coreutils}/bin/rm -rf /tmp/*
+system.activationScripts.spaceOptimization = ''
   ${config.nix.package.out}/bin/nix-collect-garbage --delete-older-than 14d
   ${config.nix.package.out}/bin/nix-store --optimise
-";
+'';
 
   # allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -40,6 +39,13 @@ system.activationScripts.spaceOptimization = "
    min-free = 536870912; # Keep at least 512MB free
    max-jobs = "auto";    # Automatically determine number of build jobs
    cores = 0;           # Use all available cores
+   sandbox = true;
+   sandbox-paths = [ "/bin" "/etc" "/usr" "/tmp" ];
+   use-substitutes = true;
+   createBuildDirs = ''
+      mkdir -p /tmp/nix-build
+      chmod 755 /tmp/nix-build
+   '';
   };
 
 
@@ -161,7 +167,12 @@ Option "Coolbits" "12"
      # moved packages to packages.nix
     };
 
-   programs.fish.enable = true;
+    programs.fish = {
+    enable = true;
+    vendor = {
+      completions.enable = true;
+      config.enable = true;
+    };
    nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
    programs.firefox = {
       enable = true;
