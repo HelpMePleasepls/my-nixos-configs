@@ -133,17 +133,17 @@ Option "Coolbits" "12"
   # services.libinput.enable = true;
 
    # virtualization
-   programs.virt-manager.enable = true;
+   # programs.virt-manager.enable = true;
    users.groups.libvirtd.members = ["bob"];
-   virtualisation.libvirtd = {
-     enable = true;
-     qemu = {
-        swtpm.enable = true;
-        ovmf.enable = true;
-        package = pkgs.qemu_full;
-      };
-    };
-   virtualisation.spiceUSBRedirection.enable = true;
+   # virtualisation.libvirtd = {
+   #  enable = true;
+   #  qemu = {
+   #     swtpm.enable = true;
+   #     ovmf.enable = true;
+   #     package = pkgs.qemu_full;
+   #   };
+   # };
+   # virtualisation.spiceUSBRedirection.enable = true;
 
    # optimise storage
    nix.optimise.automatic = true;
